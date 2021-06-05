@@ -39,9 +39,6 @@ app.get("/sleep",function(req,res){
 app.get("/body",function(req,res){
   res.render("body");
 })
-// app.get("/scenes",function(req,res){
-//   res.render("scenes");
-// })
 app.get("/music",function(req,res){
   console.log("music me aya");
   res.render("music");
@@ -55,11 +52,12 @@ app.get("/fun",function(req,res){
 })
 
 app.get("/",function(req,res){
-    res.render("home");
+    res.render("index");
 });
 app.get("/login", function(req, res) {
     res.render("login");
   });
+  var loggedIn= false
   app.post("/register", function(req, res) {
     bcrypt.hash(req.body.password, saltRounds, function(err, hash) {
       if (err) {
@@ -73,6 +71,7 @@ app.get("/login", function(req, res) {
           if (err) {
             console.log(err);
           } else {
+            loggedIn= true
             res.render("index");
           }
         })
@@ -86,27 +85,16 @@ app.get("/login", function(req, res) {
 
     const username = req.body.username;
     const password = req.body.password;
-    //  const password = md5(req.body.password);
-
-    //  console.log(username);
-    //  console.log(password);
 
     User.findOne({
       email: username
     }, function(err, foundUser) {
       if (err) {
-        //    console.log("if block");
         console.log(err);
       } else {
-        //    console.log("else block");
-        //    console.log(foundUser);
-        //    console.log(foundUser.password);
-        /*    if (foundUser.password.localeCompare(password) === 0) {
-              res.render("secrets");
-            } */
         bcrypt.compare(password, foundUser.password, function(err, result) {
-          // result == false
           if (result) {
+            loggedIn= true
             res.render("index");
           }else{
               console.log("wrong password");
@@ -136,14 +124,21 @@ app.get("/blog.html",function(req,res){
     res.render("blog");
 })
 app.get("/classes.html",function(req,res){
-    res.render("classes");
+  if (loggedIn!= true){
+    res.render("home");
+  }
+  else  
+  res.render("classes");
 })
 app.get("/contact.html",function(req,res){
     res.render("contact");
 })
 app.get("/schedule.html",function(req,res){
-    console.log("aya");
-    res.render("schedule");
+  if (loggedIn!=true){
+    res.render("home");
+  }
+  else
+  res.render("schedule");
 })
 app.get("/trainer.html",function(req,res){
     res.render("trainer");
