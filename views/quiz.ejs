@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code-Quiz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style4.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,500,500i,600,600i,700,700i&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css%2banimate.css%2bowl.carousel.min.css%2bowl.theme.default.min.css%2bmagnific-popup.css%2baos.css%2bionicons.min.css%2bbootstrap-datepicker.css"/>
+
+</head>
+<body class="body" style="background-color:ff96ad">
+  <div class="navdiv">
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+  <div class="container">
+  <div class="row m-auto">
+  <div class="col-12 w-100 text-center">
+  <a class="navbar-brand w-100" href="index.html">Meditative</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="oi oi-menu"></span> Menu
+  </button>
+  </div>
+  <div class="col-12 w-100 text-center">
+  <div class="collapse navbar-collapse" id="ftco-nav">
+  <ul class="navbar-nav m-auto">
+  <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+  <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+  <li class="nav-item"><a href="trainer.html" class="nav-link">Trainer</a></li>
+  <li class="nav-item"><a href="classes.html" class="nav-link">Classes</a></li>
+  <li class="nav-item"><a href="schedule.html" class="nav-link">Schedule</a></li>
+  <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+  <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+  <li class="nav-item"><a href="sleep" class="nav-link">Features</a></li>
+  <li class="nav-item"><a href="relaxer" class="nav-link">Relaxer</a></li>
+  <li class="nav-item"><a href="quiz" class="nav-link">Quiz</a></li>
+  </ul>
+  </div>
+  </div>
+  </div>
+  </div>
+  </nav>
+  </div>
+    <div class="container d-flex justify-content-center mt-5">
+        <div class="game-box col-lg-8 p-4">
+            <div class="row pb-4">
+                <div class="col-lg-4">
+                    <h2 class="code-title">Quiz</h2>
+
+                    <!-- <button class="btn btn-outline-primary">Hight Score</button> -->
+                </div>
+                <hr>
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <h4 class="float-right text-primary d-none" id="timecounter">Timer :<span id="timer">75</span></h4>
+                </div>
+            </div>
+            <div class="quiz-questions d-none" id="quiz-questions">
+                <h2 class="text-info  text-center" id="title-item">Lorem ipsum dolor sit amet consectetur adipisicing.</h2>
+                <div class="answers mt-5 mb-5" id="question-answers">
+                </div>
+                <h1 id="alert"></h1>
+            </div>
+            <div class="btnstart d-flex  flex-column justify-content-center mt-8 mb-10" >
+                <h3 id="info">Answer the following questions to check your mental health.
+                </h3>
+                <button class="btn btn-primary btn-lg" id="btn-start">Start Quiz</button>
+
+            </div>
+
+            <div class=" input-group mb-3 d-none" id="addscore">
+                <h5 class="d-block"><span id="score"></span></h5>
+                    <input type="text" class="form-control" placeholder="Enter your initials:"
+                    id="inputScore" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="input-group-text btn btn-primary" id="btnScore">Submit</button>
+
+                    </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/scrypt.js"></script>
+    </body>
+
+
+</html>
